@@ -1,0 +1,189 @@
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.first{
+    background-color:#24b9e1;
+    color: white;
+    height: 3rem;
+    line-height: 3rem;
+    width: 100%;
+}
+.first .first-one{
+    margin-left: 0.5rem;
+    text-align: center;
+    position: relative;
+}
+.first .first-one .one-two{
+    font-size: 1.3rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.second{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.second>div{
+    text-align: center;
+    height: 3rem;
+    line-height: 3rem;
+    font-size: 1rem;
+    flex: 1;
+}
+.second>div:nth-child(2){
+    border-bottom: 3px solid blue;
+}
+img{
+    width: 100%;
+    height: 12rem;
+}
+.threeth{
+    width: 90%;
+    display: flex;
+    margin: 0 auto;
+    border-bottom: 1.5px solid gainsboro;
+    justify-content: space-around;
+}
+
+.threeth>div{
+    flex: 1;
+    width: 100%;
+    height: 6rem;
+    text-align: center;
+}
+.threeth img{
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 0.7rem;
+    margin: 0.5rem 0;
+}
+.fourth{
+    width: 100%;
+    height: 7 rem;
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+.fourth>div{
+    text-align: center;
+    flex: 1;
+    border-right: 1.5px solid gainsboro;
+}
+.fourth>div:last-child{
+    border-right: none;
+}
+.fourth>div img{
+    height: 5rem;
+    width: 5rem;
+}
+.fourth>div h3{
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+.fivth{
+    width: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height: 18.5rem;
+    border-top: 8px solid gainsboro;
+    border-bottom:8px solid gainsboro ;
+}
+.fivth h2{
+    border-bottom: 1px solid gainsboro;
+    height: 2.2rem;
+    line-height: 2.2;
+    margin-bottom: 1rem;
+}
+.fivth .fivth-one{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+.fivth .fivth-two{
+    display: flex;
+    flex-wrap: wrap;
+    width: 14rem;
+    height: 6rem;
+    align-content: space-between;
+    justify-content: space-between;
+}
+.fivth .fivth-two span{
+    display: inline-block;
+    width: 6.7rem;
+    height: 2.7rem;
+    background-color: gainsboro;
+    text-align: center;
+    line-height: 2.7rem;
+}
+.fivth .fivth-one div:first-child{
+    width: 6.5rem;
+    height: 6.5rem;
+}
+.fivth .fivth-one div:first-child img{
+    width: 100%;
+    height: 100%;
+}
+.special-none{
+    margin-top: -8px;
+}
+.sixth{
+    height: 6rem;
+    border-bottom: 1px solid gainsboro;
+    padding: 0.3rem;
+    display: flex;
+}
+.sixth .sixth-one{
+    width: 8rem;
+    height: 5.7rem;
+    margin-right: 0.5rem;
+}
+.sixth .sixth-two{
+    width: 13rem;
+}
+.sixth .sixth-one img{
+    width: 100%;
+    height: 100%;
+}
+.sixth .sixth-two h2{
+    margin-bottom: 2.5rem;
+}
+.sixth .sixth-two span{
+    color: gainsboro;
+    font-size: 0.8rem;
+}
+.seventh{
+    height: 6rem;
+    padding: 0.3rem;
+}
+.seventh .seventh-one img{
+    display: inline-block;
+    width: 32%;
+    height: 5rem;
+    margin: 0.5rem 0;
+}
+.seventh span{
+    color: gainsboro;
+    font-size: 0.8rem;
+}
+@media  screen and ( max-width：320px){
+    .fivth .fivth-two {
+        width: 12rem;
+    }
+    .fivth .fivth-two span{
+        width: 5.7rem;
+    }
+}

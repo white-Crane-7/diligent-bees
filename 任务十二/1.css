@@ -1,0 +1,86 @@
+
+tr:nth-child(2n+1){
+    background-color: gray;
+    
+}
+tr:nth-child(2n){
+    background-color: white;
+    color: black;
+}
+
+tr:nth-child(2n)>td:nth-child(2){
+    color: red;
+}
+tr:first-child{
+    background-color: black;
+    color: white;
+}
+#first tr:nth-child(2){
+    background-color: white;
+    color:red;
+}
+#first tr:nth-child(3){
+    background-color: gray;
+    color:red;
+}
+#first tr:nth-child(4){
+    background-color: white;
+    color:red;
+}
+input:focus{
+    border: 1px solid blue;
+}
+#blue{
+    width: 200px;
+    transition: width 2s;;
+}
+#blue:hover{
+    width: 300px;
+}
+.threeth{
+    overflow: hidden;
+    position: relative;
+    width: 300px;
+    height: 150px;
+    
+}
+.threeth .threeth-one{
+   width: 900px;
+   height:150px;
+   position: absolute;
+   left: 0;
+   top: 0;
+   animation: banner ease 10s infinite;
+}
+.threeth-one .blue{
+    background-color: blue;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    left: 0;
+}
+.threeth-one .yellow{
+    background-color: yellow;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    left: 300px;
+}
+.threeth-one .green{
+    background-color: green;
+    width: 300px;
+    height: 150px;
+    position: absolute;
+    left: 600px;
+}
+@keyframes banner{
+    0%{left: 0;}
+    35%{left: -300px;} 
+    75%{left: -600px;}
+    100%{left: 0px;}
+}
+.threeth .threeth-one{
+    animation: banner  7s infinite;
+}
+
+

@@ -1,0 +1,346 @@
+/* 通用样式 */
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+/* 样式 */
+.all{
+    width: 980px;
+    height: 1386px;
+    margin: 0 auto;
+}
+.all .middle{
+    width: 892px;
+}
+.all .middle .footer{
+    border-bottom: 2px solid #938e8c;
+    height: 61px;
+    margin-bottom: 20px;
+}
+.all .middle .footer .left{
+    font-size: 12px;
+    color: #fff;
+    background-color: orangered;
+    height: 61px;
+    width: 110px;
+    line-height: 103px;
+}
+.all .middle .footer .right{
+    font-size: 12px;
+    color: #d45d5c;
+    line-height: 103px;
+}
+/* 第一部份 */
+.all .middle .contenter {
+    display: flex;
+    justify-content:space-between;
+    width: 892px;
+}
+.all .middle .contenter .img{
+    position: relative;
+}
+.all .middle .contenter img{
+    width: 641px;
+    height: 301px;
+    display: block;
+}
+.all .middle .contenter .green{
+    background-color: palegreen;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 191px;
+    height: 301px;
+    opacity:0.4
+}
+.all .middle .contenter .red{
+    background-color: red;
+    z-index: 2;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 191px;
+    height: 301px;
+    opacity:0.4
+}
+.all .middle .contenter .about{
+    width: 203px;
+    height: 301px;
+    border-top: 2px solid #cc8091;
+}
+.all .middle .contenter .about .ab{
+    font-size: 24px;
+    margin: 10px 0px;
+    color: #000000;
+    text-decoration: underline;
+}
+.all .middle .contenter .about .ab::first-letter{
+    font-size: 32px;
+}
+.all .middle .contenter .about .lo{
+    font-size: 12px;
+    color: #676767;
+}
+.all .middle .contenter .about .seven{
+    font-size: 116px;
+    color: #75b86b;
+    font-style: italic;
+    margin: 10px 0px;
+    margin-left: -18px;
+}
+.all .middle .contenter .about .three{
+    display: flex;
+}
+.all .middle .contenter .about .three .two{
+    font-size: 55px;
+    color: #cc8091;
+}   
+.all .middle .contenter .about .three .ssc .first{
+    font-size: 21px;
+    color: #cc8091;
+    margin-top: 13px;
+
+}
+.all .middle .contenter .about .three .ssc .second{
+    font-size: 12px;
+    color: #cc8091;
+}
+.all .middle .threeth{
+    display: flex;
+    justify-content: space-between;
+    width: 641px;
+    margin-top: 25px;
+}
+.all .middle .threeth .what{
+    width: 35%;
+}
+.all .middle .threeth .what .what-t{
+    font-size: 16px;
+    color: #418c59;
+    font-weight: 300;
+    text-decoration: underline;
+    margin-bottom: 6px;
+}
+.all .middle .threeth .what-s{
+    font-size: 12px;
+    color: #767777;
+}
+.all .middle .threeth .when{
+    width: 35%;
+    margin: 0 16px;
+}
+.all .middle .threeth .when .when-t{
+    font-size: 16px;
+    color: #d2994f;
+    font-weight: 300;
+    margin-bottom: 6px;
+    text-decoration: underline;
+}
+.all .middle .threeth .how{
+    width: 30%;
+}
+.all .middle .threeth .how .how-t{
+    font-size: 16px;
+    color: #cc7680;
+    font-weight: 300;
+    margin-bottom: 6px;
+    text-decoration: underline;
+}
+.all .middle .threeth .how .what-wh{
+    color: #231815;
+    opacity: 0.7;
+    font-size: 12px;
+}
+.all .middle .threeth .how .what-wh-s{
+    font-size: 12px;
+    color: #cd4a48;
+    opacity: 0.7;
+    font-style: italic;
+}
+.all .middle .threeth .how .special{
+    margin-top: 17px;
+}
+.all .middle .fourth{
+    margin-top: 30px;
+}
+.all .middle .fourth .left{
+    width: 415px;
+}
+.all .middle .fourth .right{
+    width: 458px;
+}
+.all .middle .fourth .left .top-one{
+    border-bottom:2px solid #11456b ;    
+}
+.all .middle .fourth .left .top-one .the{
+    font-size: 72px;
+    color: #f5e327;
+    font-weight: 500;
+    font-style: italic;
+}
+.all .middle .fourth .left .top-one .tech{
+    font-size: 37px;
+    color: #11456b;
+    font-weight: 500;
+}
+.all .middle .fourth .left .top-one .qian{
+    font-size: 37px;
+    color: #11456b;
+    font-weight: 500;
+    margin: 10px 0px;
+}
+.all .middle .fourth .left .botton-one{
+    position: relative;
+    font-size: 12px;
+    color: #767777;
+    padding-top: 20px;
+}
+.all .middle .fourth .left .botton-one img{
+    float: right;
+    width: 160px;
+    height: 250px;
+    margin: 10px 0 10px 10px;
+}
+.all .middle .fourth .left .botton-one .botton-one-two::first-letter{
+    text-indent: 6rem;
+    font-size: 70px;
+    color: #f5e327;
+    float: left;
+    margin: 0px 10px 10px 0px;
+}
+.all .middle .fourth .left .botton-one .botton-one-one{
+text-indent: 1.5rem;
+}
+.all .middle .fourth .right .top-two{
+    position: relative;
+    margin-bottom: 20px;
+}
+.all .middle .fourth .right img{
+    width: 458px;
+    height: 275px;
+}
+.all .middle .fourth .right .top-two .top-three{
+    position: absolute;
+    bottom: 0px;
+    background-color: black;
+    opacity: 0.6;
+    width: 100%;
+    height: 70px;
+    line-height: 70px;
+}
+.all .middle .fourth .right .top-two .top-three .first-one{
+    border-left: 3px solid #72b16a;
+    font-size: 26px;
+    color: #fff;
+    margin-left: 30px;
+    padding-left: 5px;
+}
+.all .middle .fourth .right .top-two .top-three .first-two{
+    font-size: 12px;
+    color: #72b16a;
+    font-style: italic;
+}
+.all .middle .fourth .right .bottow-two{
+    width: 458px;
+    height: 318px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: burlywood;
+    padding-top: 40px;
+    box-sizing: border-box;
+}
+.all .middle .fourth .right .bottow-two .triangle{
+    width: 0;
+    height: 0;
+    display: inline-block;
+    border-style: solid;
+    border-width: 0px 4px 6px;
+    margin-left: 30px;
+    border-color: transparent transparent #11456b ;
+}
+.all .middle .fourth .right .bottow-two .second-one .t-one{
+    font-size: 16px;
+    color: #5a5b5b;
+}
+.all .middle .fourth .right .bottow-two .second-one .t-two{
+    font-size: 12px;
+    color: #5a5b5b;
+    font-style: italic;
+}
+.all .middle .fourth .right .bottow-two .fourth-one{
+    width: 459px;
+    height: 150px;
+}
+.all .middle .fourth .right .bottow-two .fourth-one{
+    display: flex;
+    justify-content: space-between;
+}
+.all .middle .fourth .right .bottow-two .fourth-one .fourth-two{
+    background-color: tomato;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+.all .middle .fourth .right .bottow-two .fourth-one .fourth-two .zero{
+    font-size: 110px;
+    color: #fff;
+    height: 86px;
+    line-height: 150px;
+    text-align: center;
+    margin-left: 10px;
+}
+/* .all .middle .fourth .right .bottow-two .fourth-one .fourth-two .zero::after{
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 86px;
+    border: 1.2px solid #fff;
+} */
+.all .middle .fourth .right .bottow-two .fourth-one .fourth-two .fourth-three{
+    border-left: 2px solid #fff;
+    height: 86px; 
+    margin-top: 35px;
+    padding-left: 5px;
+}
+.all .middle .fourth .right .bottow-two .fourth-one .fourth-two .fourth-four{
+    font-size: 21px;
+    color: #fff;
+    font-style: italic;
+    margin-top: 5px;
+    
+}
+.all .middle .fourth .right .bottow-two .fourth-one .fourth-two .fourth-five{
+    font-size: 12px;
+    color: #fff;
+}
+.all .middle .fourth .right .bottow-two .fourth-one .hallo{
+    width: 181px;
+}
+.all .middle .fourth .right .bottow-two .fourth-one .hallo .fuhao{
+    font-size: 25px;
+   color: #d45d5c;
+}
+.all .middle .fourth .right .bottow-two .fourth-one .hallo .text{
+    font-size: 14px;
+    color: #5a5b5b;
+    font-style: italic;
+}
+.all .middle .fifth{
+    text-align: end;
+    width: 892px;
+    border-top: 1px solid #938e8c;
+    color: #d45d5c;
+    font-size: 12px;
+    margin-top: 20px;
+}
