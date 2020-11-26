@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .text{
+        width: 300px;
+        height: 20px;
+    }
+</style>
+<body>
+    <div class="">
+        <input type="text" id="text">
+        <button id="Lenter">左侧入</button>
+        <input type="submit" value="右侧入" id="Renter">
+        <input type="submit" value="左侧出" id="Lout">
+        <input type="submit" value="右侧出" id="Rout">
+    </div>
+    <div style="display: flex;" id="con"><span></span></div>
+    <script>
+        //获取
+        var con = document.getElementById('con');
+        var text = document.getElementById('text');//文本框
+        var Lenter = document.getElementById('Lenter');//左侧入
+        var Renter = document.getElementById('Renter');//右侧入
+        var Lout = document.getElementById('Lout');//左侧出
+        var Rout = document.getElementById('Rout');//右侧出
+        let span=document.getElementsByTagName('span')
+        let content=[]
+        function addFirst(){
+            if(text.value!=''){ content.unshift(text.value);}//在开头加值
+           
+        }
+        function addLast(){
+            if(text.value!=''){content.push(text.value);}
+            
+        }
+        function removeFirst(){//去掉开头
+            content.shift();
+        }
+        function removeLast(){//去掉结尾
+            content.pop();
+        }
+        function refresh(){//重新渲染 
+        // for(let i=0;i<content.length;i++){
+        //     span[0].innerHTML+=content[i]
+        // }
+        span[0].innerHTML=content.join(" ");
+        text.value='';
+        // console.log(content)
+        }
+        Lenter.addEventListener('click',function(){
+            addFirst();
+            refresh();
+        })
+        Renter.addEventListener('click',function(){
+            addLast();
+            refresh();
+        })
+        Lout.addEventListener('click',function(){
+            removeFirst();
+            refresh();
+        })
+        Rout.addEventListener('click',function(){
+            removeLast();
+            refresh();
+        })
+    </script>
+</body>
+</html>
