@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    li {
+        list-style: none;
+    }
+
+    #contentBox {
+        display: flex;
+        align-items: flex-end;
+        height: 300px;
+        width: 100%;
+        background-image: linear-gradient(120deg,#7ed6df,#686de0);
+    }
+
+    .text {
+        width: 300px;
+        height: 20px;
+    }
+
+    .nomalCharts {
+        margin: 2px;
+        width: 10px;
+        background-image: linear-gradient(60deg,#be2edd,#4834d4);
+    }
+</style>
+
+<body>
+    <div class="btnList">
+        <input type="text" id="text">
+        <button id="Lenter">左侧入</button>
+        <button id="Renter">右侧入</button>
+        <button id="Lout">左侧出</button>
+        <button id="Rout">右侧出</button>
+        <button id="manageData">排序</button>
+        <button id="createRadom">生成随机数</button>
+    </div>
+    <ul id="contentBox"></ul>
+    <script>
+        //获取
+        let contentBox = document.getElementById('contentBox');//放置要渲染的对象
+        let text = document.getElementById('text');//文本框
+        let Lenter = document.getElementById('Lenter');//左侧入
+        let Renter = document.getElementById('Renter');//右侧入
+        let Lout = document.getElementById('Lout');//左侧出
+        let Rout = document.getElementById('Rout');//右侧出
+        let manageData=document.getElementById('manageData');//排序
+        let createRadom=document.getElementById('createRadom');
+        let span = document.getElementsByTagName('span');//放置数据
+        let content = [];//放置要渲染的数据
+
+        function addFirst() {
+            if (content.length >= 50) {
+                return alert('数据溢出,请不要再输入数据!');
+            }
+            if (text.value < 10 || text.value > 100) {
+                return alert("请输入大于等于10小于等于50的数字!");
+            }
+            if (text.value != '') { content.unshift(text.value); }//在开头加值
+        }
+        function addLast() {
+            if (content.length >= 50) {
+                return alert('数据溢出,请不要再输入数据!');
+            }
+            if (text.value < 10 || text.value > 100) {
+                return alert("请输入大于等于10小于等于50的数字!");
+            }
+            if (text.value != '') { content.push(text.value); }
+        }
+        function removeFirst() {//去掉开头
+            content.shift();
+        }
+        function removeLast() {//去掉结尾
+            content.pop();
+        }
+
+        function showCharts() {
+            //开始渲染之前，先清除之前的节点
+            while (contentBox.hasChildNodes()) {
+                contentBox.getElementsByTagName('li')[0].remove();
+            }
+
+            //渲染柱状图
+            for (let i = 0; i < content.length; i++) {
+                let newLi = document.createElement('li');
+                newLi.className = 'nomalCharts';
+                newLi.style.height = content[i] * 2 + 'px';
+                contentBox.appendChild(newLi);
+            }
+        }
+        Lenter.addEventListener('click', function () {
+            addFirst();
+            showCharts();
+            text.value = '';
+        })
+        Renter.addEventListener('click', function () {
+            addLast();
+            showCharts();
+            text.value = '';
+        })
+        Lout.addEventListener('click', function () {
+            removeFirst();
+            showCharts();
+        })
+        Rout.addEventListener('click', function () {
+            removeLast();
+            showCharts();
+        })
+        manageData.addEventListener('click',()=>{
+            content.sort((a,b)=>{
+                return a-b;
+            })
+            showCharts();
+        })
+        createRadom.addEventListener('click',()=>{
+            content=[];
+            for(let i=0;i<50;i++){
+                content.push(Math.round(Math.random()*100));
+            }
+            showCharts();
+        })
+    </script>
+</body>
+
+</html>

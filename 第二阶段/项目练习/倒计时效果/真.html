@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        width: 300px;
+        height: 300px;
+        text-align: center;
+        line-height: 300px;
+        background-image: linear-gradient(120deg,#9c88ff,#487eb0);
+    }
+
+</style>
+<body>
+    <button>请点击</button>
+    <script>
+        //按钮之后就禁用 disabled 为true
+        var btn = document.querySelector('button');
+        var time = 3;//定义秒速
+        btn.addEventListener('click',function(){
+            var timer = setInterval(function(){
+                if(time == 0){
+                    //清除定时器 和 复原按钮
+                    btn.innerHTML = '请点击';
+                }else{
+                    btn.innerHTML = '还剩下' + time +'秒按钮消失';
+                    time--;
+                }        
+            },1000);
+        })
+    </script>
+</body>
+</html>

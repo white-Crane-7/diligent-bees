@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>污染城市列表</h3>
+    <ul id="aqi-list">
+        <!--   
+    <li>第一名：福州（样例），10</li>
+    <li>第二名：福州（样例），10</li> -->
+    </ul>
+    <script type="text/javascript">
+
+        var aqiData = [
+            ["北京", 90],
+            ["上海", 50],
+            ["福州", 10],
+            ["广州", 50],
+            ["成都", 90],
+            ["西安", 100]
+        ];
+
+        (function () {
+            /*
+            在注释下方编写代码
+            遍历读取aqiData中各个城市的数据
+            将空气质量指数大于60的城市显示到aqi-list的列表中
+            */
+           let aqiList=document.getElementById('aqi-list')//获取要添加的父节点
+           let goodQuelity=[]//要放入符合规格的数据
+           //数据过滤，把新数据放入要渲染的数组
+           for(let i=0;i<aqiData.length;i++){
+               if(aqiData[i][1]>60){
+                   goodQuelity.push(aqiData[i]);
+               }
+           }
+           console.log(goodQuelity)
+           //根据要渲染的数据动态创建dom
+           for(let i=0;i<goodQuelity.length;i++){
+               let content=document.createElement('li');
+               content.innerHTML="城市名称:"+goodQuelity[i][0]+",天气质量为:"+goodQuelity[i][1];
+               aqiList.appendChild(content);
+           }
+        })();
+
+    </script>
+</body>
+
+</html>

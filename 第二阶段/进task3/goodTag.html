@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      li {
+        list-style: none;
+        height: 90px;
+        width: 90px;
+        padding: 5px;
+        margin: 10px;
+        line-height: 90px;
+        text-align: center;
+        background-color: rosybrown;
+      }
+      #btnBox {
+        width: 100%;
+      }
+      #insetBox,
+      #insetBtn,
+      #searBtn,
+      #searchBox {
+        float: left;
+        overflow: hidden;
+        /* 创建bfc 浮动 */
+      }
+      #tagBox {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        background-image: linear-gradient(120deg,#f1c40f,#3498db);
+      }
+      /* 当被匹配到后更改样式 */
+      .chosen {
+        background-color: seagreen;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="btnBox">
+      <!-- 输入框 -->
+      <textarea name="" id="insetBox" cols="30" rows="10"></textarea>
+      <button id="insetBtn">插入</button>
+      <button id="searBtn">查询</button>
+      <input type="text" id="searchBox" />
+    </div>
+    <ul id="tagBox"></ul>
+    <script>
+      //获取节点
+      let insetBox = document.getElementById("insetBox");
+      let insetBtn = document.getElementById("insetBtn");
+      let searBtn = document.getElementById("searBtn");
+      let searchBox = document.getElementById("searchBox");
+      let tagBox = document.getElementById("tagBox");
+
+      const tagArr = []; //存放标签数据
+      let matchedTags = []; //存放被匹配的标签
+      function refreshInput() {//清除插入值后，文本框里的数据
+        this.value = "";
+      }
+      function refreshTags() {//在重新匹配后清楚原本的样式
+        for (let i = 0; i < matchedTags.length; i++) {
+          tagBox.getElementsByTagName("li")[matchedTags[i]].getElementsByTagName("a")[0].className = "";
+        }
+      }
+      function showMatchedTags() {
+        //给匹配到的tag打标记
+        for (let i = 0; i < matchedTags.length; i++) {
+          tagBox.getElementsByTagName("li")[matchedTags[i]].getElementsByTagName("a")[0].className = "chosen";
+        }
+      }
+      //插入输入的数值
+      function insetContent() {
+        if (insetBox.value == "") {//如果没有值 请输入
+          alert("请输入有效数据后再插入标签!");
+        }
+        if (insetBox.value != "") {//判断若不为空值则进行赋值
+          tagArr.push(insetBox.value);//将输入框的值推进数组
+          let newTag = document.createElement("li");//创建li
+          let newTextBox = document.createElement("a");//创建li 里面的a 因为只改文本的颜色
+          let newTest = document.createTextNode(tagArr[tagArr.length - 1]);//数组里面推进去新的数组值 判定出来
+          newTextBox.appendChild(newTest);//将后面的值套娃复制进去
+          newTag.appendChild(newTextBox);
+          tagBox.appendChild(newTag);
+        }
+      }
+      function searchContent() {
+          if(matchedTags.length>0){
+               refreshTags(); //寻找内容之前清空原来的样式
+               matchedTags = []; //初始化被渲染的tags
+          }
+        
+        //匹配对应内容的标签
+        let testContent = new RegExp(searchBox.value, "i");//正则表达式
+        for (let i = 0; i < tagArr.length; i++) {//对每个标签里面的值进行遍历匹配 若匹配成功 则推入一个数组里面
+          if (testContent.test(tagArr[i])) {
+            matchedTags.push(i);
+          }
+        }
+        // console.log(matchedTags)
+        showMatchedTags()
+      }
+      insetBtn.onclick = function () {  //插入数值的调用
+        insetContent();
+        refreshInput.call(insetBox);
+      };
+      searBtn.onclick = function () { //搜索数值的调用
+        searchContent();
+        refreshInput.call(searchBox);
+      };
+    </script>
+  </body>
+</html>

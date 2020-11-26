@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tab切换栏</title>
+</head>
+<style>
+    .current{
+        background-color: aquamarine;
+    }
+    .none{
+        display: none ;
+    }
+    .float{
+        display: flex;
+    }
+    li{
+        list-style: none;
+        width: 50px;
+    }
+</style>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul class=" float">
+                <li class="current ">one</li>
+                <li>two</li>
+                <li>three</li>
+                <li>four</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item">111111111</div>
+            <div class="item none">222222222</div>
+            <div class="item none">333333333</div>
+            <div class="item none">444444444</div>
+        </div>
+    </div>
+    
+    <script>
+        //获取元素
+        var tab_list = document.querySelector('.tab_list');
+        var lis = tab_list.querySelectorAll('li');
+        var items = document.querySelectorAll('.item');
+        //for循环点击事件
+        for(var i = 0; i < lis.length; i++){
+            //给五个小li设置索引号
+            lis[i].setAttribute('index',i);
+            lis[i].onclick = function(){
+                //清除所有的li
+                for(var i = 0; i < lis.length; i++){
+                    lis[i].className = '';
+                }
+                //创建自己
+                this.className = 'current';
+                //显示内容
+                var index = this.getAttribute('index');
+                //排他思想
+                for(var i = 0; i < items.length; i++){
+                    items[i].style.display = 'none';
+                }
+                items[index].style.display = 'block'
+            }
+        }
+    </script>
+</body>
+</html>
